@@ -379,6 +379,12 @@ int InvMenu::pre_process(int key)
     {
         key = index_to_letter(you.last_unequip);
     }
+    else if (key == '^'
+	     && you.last_pickup.size() != 0
+	     && (type == menu_type::drop || type == menu_type::invlist))
+    {
+	key = index_to_letter(you.last_pickup.begin()->first);
+    }
     else if (key == '-')
         _mode_special_drop = false;
     return key;
