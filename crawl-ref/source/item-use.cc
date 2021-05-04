@@ -607,7 +607,7 @@ bool wield_weapon(bool auto_wield, int slot, bool show_weff_messages,
         if (!auto_wield)
         {
             if (!use_an_item(to_wield, OSEL_WIELD, OPER_WIELD, "Wield "
-                             "which item (- for none, * to show all)?"))
+                             "which item (- for none, * to show all)?, ^ for [last item])"))
             {
                 return false;
             }
@@ -1195,7 +1195,7 @@ bool wear_armour(int item)
     if (item == -1)
     {
         if (!use_an_item(to_wear, OBJ_ARMOUR, OPER_WEAR,
-                         "Wear which item (* to show all)?"))
+                         "Wear which item (* to show all, ^ for [last item])?"))
         {
             return false;
         }
@@ -2066,7 +2066,7 @@ bool puton_ring(int slot, bool allow_prompt, bool check_for_inscriptions)
     if (slot == -1)
     {
         if (!use_an_item(to_puton_ptr, OBJ_JEWELLERY, OPER_PUTON,
-                        "Put on which piece of jewellery (* to show all)?"))
+                        "Put on which piece of jewellery (* to show all, ^ for [last item])?"))
         {
             return false;
         }
@@ -2262,7 +2262,7 @@ void drink(item_def* potion)
 
     if (!potion)
     {
-        if (!use_an_item(potion, OBJ_POTIONS, OPER_QUAFF, "Drink which item (* to show all)?"))
+        if (!use_an_item(potion, OBJ_POTIONS, OPER_QUAFF,"Drink which item (* to show all)? (Press ^ for [last potion])" ))
             return;
     }
 
@@ -2898,7 +2898,7 @@ void read(item_def* scroll)
 
     if (!scroll)
     {
-        if (!use_an_item(scroll, OBJ_SCROLLS, OPER_READ, "Read which item (* to show all)?"))
+        if (!use_an_item(scroll, OBJ_SCROLLS, OPER_READ, "Read which item (* to show all)? (Press ^ for [last item])"))
             return;
     }
 
